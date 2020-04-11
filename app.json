@@ -1,0 +1,6 @@
+{
+  "name": "Domain Checker API",
+  "description": "Domain availability checker",
+  "repository": "https://github.com/gizipp/domain-checker-api",
+  "keywords": ["api", "domain", "ruby"]
+}
