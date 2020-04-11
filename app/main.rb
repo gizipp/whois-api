@@ -21,13 +21,12 @@ class SlimConverter < Sinatra::Base
 
   post '/check' do
     whois = Whois::Client.new
+    json_data = {}
     supported_tlds = [:com, :net, :org, :io]
-    json_data = []
-
     supported_tlds.each do |tld|
       domain = "#{params[:domain].split('.')[0]}.#{tld}"
       record = whois.lookup(domain)
-      json_data << { domain => record&.parser&.available? }
+      json_data[domain] = record&.parser&.available?
     end
 
     json(json_data)
