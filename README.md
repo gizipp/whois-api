@@ -6,10 +6,10 @@
     <img src="https://img.shields.io/badge/whois-v5.0.1-brightgreen.svg" alt="whois version">
   </a>
   <a href="https://codeclimate.com/github/gizipp/domain-checker-api/maintainability">
-  <img src="https://api.codeclimate.com/v1/badges/ea5a802da76b903de2fd/maintainability" />
+    <img src="https://api.codeclimate.com/v1/badges/b29c52745c53a7edd431/maintainability" />
   </a>
   <a href="https://codeclimate.com/github/gizipp/domain-checker-api/test_coverage">
-    <img src="https://api.codeclimate.com/v1/badges/ea5a802da76b903de2fd/test_coverage" />
+    <img src="https://api.codeclimate.com/v1/badges/b29c52745c53a7edd431/test_coverage" />
   </a>
   <img src="https://img.shields.io/github/languages/code-size/gizipp/domain-checker-api" alt="GitHub code size in bytes">
 </center>
