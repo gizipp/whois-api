@@ -7,3 +7,7 @@ gem 'sinatra-contrib'
 gem 'puma', '~> 4.3', '>= 4.3.3'
 gem 'whois', '~> 5.0', '>= 5.0.1'
 gem 'whois-parser'
+
+group :production do
+  gem 'newrelic_rpm'
+end

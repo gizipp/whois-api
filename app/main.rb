@@ -3,6 +3,10 @@ require "sinatra/json"
 require 'whois'
 require 'whois-parser'
 
+configure :production do
+  require 'newrelic_rpm'
+end
+
 class SlimConverter < Sinatra::Base
   before do
     headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, DELETE, OPTIONS'
