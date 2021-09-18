@@ -47,9 +47,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+<<<<<<< HEAD
   byebug
   newrelic_rpm
   puma (~> 4.3, >= 4.3.3)
+=======
+  puma (~> 4.3)
+>>>>>>> 252f9007407107c1ef75f61a4f2854035a60f2bb
   sinatra (~> 2.0, >= 2.0.8.1)
   sinatra-contrib
   whois (~> 5.0, >= 5.0.1)
