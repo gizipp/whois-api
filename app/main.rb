@@ -2,10 +2,13 @@ require "sinatra/base"
 require "sinatra/json"
 require 'whois'
 require 'whois-parser'
-require 'byebug'
 
 configure :production do
   require 'newrelic_rpm'
+end
+
+configure :development do
+  require 'byebug'
 end
 
 class WhoisChecker < Sinatra::Base
