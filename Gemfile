@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.6.5'
+ruby '3.0.2'
 
 gem 'sinatra', '~> 2.0', '>= 2.0.8.1'
 gem 'sinatra-contrib'
@@ -10,4 +10,8 @@ gem 'whois-parser'
 
 group :production do
   gem 'newrelic_rpm'
+end
+
+group :development do
+  gem 'byebug'
 end

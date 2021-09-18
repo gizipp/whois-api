@@ -2,12 +2,13 @@ require "sinatra/base"
 require "sinatra/json"
 require 'whois'
 require 'whois-parser'
+require 'byebug'
 
 configure :production do
   require 'newrelic_rpm'
 end
 
-class SlimConverter < Sinatra::Base
+class WhoisChecker < Sinatra::Base
   before do
     headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, DELETE, OPTIONS'
     headers['Access-Control-Allow-Origin'] = '*'
@@ -26,13 +27,36 @@ class SlimConverter < Sinatra::Base
   post '/check' do
     whois = Whois::Client.new
     json_data = {}
-    supported_tlds = [:com, :net, :org, :io]
+    supported_tlds = [:com, :net, :org, :io, :xyz, :it]
     supported_tlds.each do |tld|
       domain = "#{params[:domain].split('.')[0]}.#{tld}"
       record = whois.lookup(domain)
       json_data[domain] = record&.parser&.available?
     end
 
-    json(json_data)
+    json json_data
+  end
+
+  post '/whois' do
+    begin
+      whois = Whois::Client.new
+      json_data = {}
+      json_data['data'] = whois.lookup(params[:domain]).to_s.encode('UTF-8', invalid: :replace, undef: :replace, replace: '?')
+      json json_data
+    rescue
+      json status: :error
+    end
+  end
+
+  post '/ns' do
+    begin
+      whois = Whois::Client.new
+      json_data = {}
+      record = whois.lookup(params[:domain])
+      json_data['ns'] = record&.parser.nameservers
+      json json_data
+    rescue
+      json status: :error
+    end
   end
 end
