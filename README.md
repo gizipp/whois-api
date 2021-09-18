@@ -11,7 +11,7 @@
   <img src="https://img.shields.io/github/languages/code-size/gizipp/domain-checker-api" alt="GitHub code size in bytes">
 </center>
 
-# Domain Checker API
+# WHOIS API
 
 This API powering [Domain Checker](https://tools.gizipp.com/domain-checker) - [GIZ Tool](https://tools.gizipp.com).
 
@@ -77,4 +77,4 @@ $.ajax(settings).done(function (response) {
 
 Feel free to use it, but uptime is not guarantee or deploy this API in Heroku.
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/gizipp/domain-checker-api)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/gizipp/whois-api)
